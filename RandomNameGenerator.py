@@ -4,20 +4,19 @@ import mysql.connector
 import time 
 start = time.time()
 
-with open("Names.json","r") as f:
-    data = f.read()    
+with open("Names.json","r") as f: # Opens the name json
+    data = f.read() # stores the json data in var
 
-# names = json.load(data)
-data = data.replace('"',"")
-data = data.replace(',',"")
+data = data.replace('"',"") # removes all "
+data = data.replace(',',"") # removes all ,
 
-nameList = data.split()
-length = len(nameList)
-FL = []
+nameList = data.split() # Turns into list
+length = len(nameList) # gets length of list
+FL = [] # empty list
 for i in range(1000000):
-    F = nameList[random.randint(0,length-1)]
-    L = nameList[random.randint(0,length-1)]
-    FL.append([F, L])
+    F = nameList[random.randint(0,length-1)] # gets random name from list
+    L = nameList[random.randint(0,length-1)] # gets random name from list
+    FL.append([F, L]) # Takes first and last name into a list 
 
 print("Names Made")
 
